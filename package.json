@@ -1,6 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
+  "type": "module",
   "description": "mind games",
   "main": "index.js",
   "scripts": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/OGGera/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/OGGera/frontend-project-44#readme"
+  "homepage": "https://github.com/OGGera/frontend-project-44#readme",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
 }
