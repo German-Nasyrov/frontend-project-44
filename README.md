@@ -5,4 +5,8 @@
 
 <!-- Link to instructions for installation brain-even game and the gameplay of this game -->
 
-https://asciinema.org/a/528245
+https://asciinema.org/a/528577
+
+<!-- Link to instructions for installation brain-calc game and the gameplay of this game -->
+
+https://asciinema.org/a/528578
