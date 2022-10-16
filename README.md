@@ -10,3 +10,7 @@ https://asciinema.org/a/528577
 <!-- Link to instructions for installation brain-calc game and the gameplay of this game -->
 
 https://asciinema.org/a/528578
+
+<!-- Link to instructions for installation brain-gcd game and the gameplay of this game -->
+
+https://asciinema.org/a/528868
