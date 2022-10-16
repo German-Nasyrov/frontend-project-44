@@ -12,6 +12,14 @@ export function getRandomValue() {
   return Math.floor(Math.random() * 101);
 }
 
+export function calcGcd(firstNumber, secondNumber) {
+  if (secondNumber === 0) {
+    return firstNumber;
+  }
+
+  return calcGcd(secondNumber, firstNumber % secondNumber);
+}
+
 export function successCheck(value, answer, rightAnswer) {
   if (value === true) {
     successCounter += 1;
