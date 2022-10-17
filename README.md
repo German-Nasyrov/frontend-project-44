@@ -14,3 +14,7 @@ https://asciinema.org/a/528578
 <!-- Link to instructions for installation brain-gcd game and the gameplay of this game -->
 
 https://asciinema.org/a/528868
+
+<!-- Link to instructions for installation brain-progression game and the gameplay of this game -->
+
+https://asciinema.org/a/529348
