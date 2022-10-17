@@ -12,6 +12,12 @@ export function getRandomValue() {
   return Math.floor(Math.random() * 101);
 }
 
+export function getRandomIntInclusive(minNum, maxNum) {
+  const min = Math.ceil(minNum);
+  const max = Math.floor(maxNum);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 export function calcGcd(firstNumber, secondNumber) {
   if (secondNumber === 0) {
     return firstNumber;
