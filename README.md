@@ -18,3 +18,7 @@ https://asciinema.org/a/528868
 <!-- Link to instructions for installation brain-progression game and the gameplay of this game -->
 
 https://asciinema.org/a/529348
+
+<!-- Link to instructions for installation brain-prime game and the gameplay of this game -->
+
+https://asciinema.org/a/529687
