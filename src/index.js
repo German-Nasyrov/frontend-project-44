@@ -18,20 +18,38 @@ export function getRandomIntInclusive(minNum, maxNum) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-export function calcGcd(firstNumber, secondNumber) {
+export function calculateGcd(firstNumber, secondNumber) {
   if (secondNumber === 0) {
     return firstNumber;
   }
 
-  return calcGcd(secondNumber, firstNumber % secondNumber);
+  return calculateGcd(secondNumber, firstNumber % secondNumber);
 }
+
+export const isPrimeNum = (number) => {
+  if (number < 2) return false;
+
+  let divider = 2;
+
+  while (divider <= number / 2) {
+    if (number % divider === 0) {
+      return false;
+    }
+
+    divider += 1;
+  }
+
+  return true;
+};
 
 export function successCheck(value, answer, rightAnswer) {
   if (value === true) {
     successCounter += 1;
     console.log('Correct!');
   } else {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+    console.log(
+      `'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`,
+    );
   }
 }
 
