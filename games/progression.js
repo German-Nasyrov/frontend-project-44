@@ -24,46 +24,23 @@ function progression() {
 }
 
 export default function calcNum() {
-  const trueValue = true;
-  const falseValue = false;
-  let answer = '';
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('What number is missing in the progression?');
 
-  for (let i = 0; i < 1; i += 1) {
-    const firstProgression = progression();
-    console.log(`Question: ${firstProgression}`);
+  for (let i = 0; i < 3; i += 1) {
+    const trueValue = true;
+    const falseValue = false;
+    let answer = '';
+    const doProgression = progression();
+    console.log(`Question: ${doProgression}`);
     answer = readlineSync.question('Your answer: ');
 
     if (answer === rightAnswer) {
       successCheck(trueValue, answer);
       array = [];
-    } else if (answer !== rightAnswer) {
-      successCheck(falseValue, answer, rightAnswer);
-      break;
-    }
-
-    const secondProgression = progression();
-    console.log(`Question: ${secondProgression}`);
-    answer = readlineSync.question('Your answer: ');
-
-    if (answer === rightAnswer) {
-      successCheck(trueValue, answer);
-      array = [];
-    } else if (answer !== rightAnswer) {
-      successCheck(falseValue, answer, rightAnswer);
-      break;
-    }
-
-    const thirdProgression = progression();
-    console.log(`Question: ${thirdProgression}`);
-    answer = readlineSync.question('Your answer: ');
-
-    if (answer === rightAnswer) {
-      successCheck(trueValue, answer);
-    } else if (answer !== rightAnswer) {
+    } else {
       successCheck(falseValue, answer, rightAnswer);
       break;
     }

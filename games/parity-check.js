@@ -17,14 +17,20 @@ export default function isNumberEven() {
     console.log(`Question: ${generatedNumber}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (generatedNumber % 2 === 0 && answer === 'yes') {
+    if (generatedNumber % 2 === 0 && answer === yes) {
       successCheck(trueValue, answer);
-    } else if (generatedNumber % 2 !== 0 && answer === 'no') {
+    } else if (generatedNumber % 2 !== 0 && answer === no) {
       successCheck(trueValue, answer);
-    } else if (generatedNumber % 2 === 0 && answer === 'no') {
+    } else if (generatedNumber % 2 === 0 && answer === no) {
       successCheck(falseValue, answer, yes);
       break;
-    } else if (generatedNumber % 2 !== 0 && answer === 'yes') {
+    } else if (generatedNumber % 2 !== 0 && answer === yes) {
+      successCheck(falseValue, answer, no);
+      break;
+    } else if (generatedNumber % 2 === 0 && answer !== no) {
+      successCheck(falseValue, answer, yes);
+      break;
+    } else if (generatedNumber % 2 !== 0 && answer !== yes) {
       successCheck(falseValue, answer, no);
       break;
     }

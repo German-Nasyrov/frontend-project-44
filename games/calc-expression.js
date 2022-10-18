@@ -2,24 +2,23 @@ import readlineSync from 'readline-sync';
 import { getRandomValue, result, successCheck } from '../src/index.js';
 
 export default function isResultEquals() {
-  const trueValue = true;
-  const falseValue = false;
-  const firstNumber = getRandomValue();
-  const secondNumber = getRandomValue();
-  const thirdNumber = getRandomValue();
-  const fourthNumber = getRandomValue();
-  const fifthNumber = getRandomValue();
-  const sixthNumber = getRandomValue();
-  const sum = String(firstNumber + secondNumber);
-  const diff = String(thirdNumber - fourthNumber);
-  const multiply = String(fifthNumber * sixthNumber);
-
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log('What is the result of the expression?');
 
   for (let i = 0; i < 1; i += 1) {
+    const trueValue = true;
+    const falseValue = false;
+    const firstNumber = getRandomValue();
+    const secondNumber = getRandomValue();
+    const thirdNumber = getRandomValue();
+    const fourthNumber = getRandomValue();
+    const fifthNumber = getRandomValue();
+    const sixthNumber = getRandomValue();
+    const sum = String(firstNumber + secondNumber);
+    const diff = String(thirdNumber - fourthNumber);
+    const multiply = String(fifthNumber * sixthNumber);
     console.log(`Question: ${firstNumber} + ${secondNumber}`);
     const sumAnswer = readlineSync.question('Your answer: ');
 
