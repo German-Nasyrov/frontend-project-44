@@ -12,25 +12,29 @@ export default function isNumberEven() {
     const falseValue = false;
     const yes = 'yes';
     const no = 'no';
-    const generatedNumber = getRandomValue();
+    const genNum = getRandomValue();
 
-    console.log(`Question: ${generatedNumber}`);
+    console.log(`Question: ${genNum}`);
     const answer = readlineSync.question('Your answer: ');
 
-    if (generatedNumber % 2 === 0 && answer === yes) {
+    if (
+      // eslint-disable-next-line operator-linebreak
+      (genNum % 2 === 0 && answer === yes) ||
+      (genNum % 2 !== 0 && answer === no)
+    ) {
       successCheck(trueValue, answer);
-    } else if (generatedNumber % 2 !== 0 && answer === no) {
-      successCheck(trueValue, answer);
-    } else if (generatedNumber % 2 === 0 && answer === no) {
+    } else if (
+      // eslint-disable-next-line operator-linebreak
+      (genNum % 2 === 0 && answer === no) ||
+      (genNum % 2 === 0 && answer !== no)
+    ) {
       successCheck(falseValue, answer, yes);
       break;
-    } else if (generatedNumber % 2 !== 0 && answer === yes) {
-      successCheck(falseValue, answer, no);
-      break;
-    } else if (generatedNumber % 2 === 0 && answer !== no) {
-      successCheck(falseValue, answer, yes);
-      break;
-    } else if (generatedNumber % 2 !== 0 && answer !== yes) {
+    } else if (
+      // eslint-disable-next-line operator-linebreak
+      (genNum % 2 !== 0 && answer === yes) ||
+      (genNum % 2 !== 0 && answer !== yes)
+    ) {
       successCheck(falseValue, answer, no);
       break;
     }

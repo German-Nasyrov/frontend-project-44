@@ -1,13 +1,14 @@
 import readlineSync from 'readline-sync';
-import {
-  getRandomValue,
-  getRandomIntInclusive,
-  result,
-  successCheck,
-} from '../src/index.js';
+import { getRandomValue, result, successCheck } from '../src/index.js';
 
 let array = [];
 let rightAnswer = '';
+
+function getRandomIntInclusive(minNum, maxNum) {
+  const min = Math.ceil(minNum);
+  const max = Math.floor(maxNum);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 function progression() {
   const randomNum = getRandomValue();

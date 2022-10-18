@@ -24,7 +24,7 @@ export default function isResultEquals() {
 
     if (sumAnswer === sum) {
       successCheck(trueValue, sumAnswer);
-    } else if (sumAnswer !== sum) {
+    } else {
       successCheck(falseValue, sumAnswer, sum);
       break;
     }
@@ -34,7 +34,7 @@ export default function isResultEquals() {
 
     if (diffAnswer === diff) {
       successCheck(trueValue, diffAnswer);
-    } else if (diffAnswer !== diff) {
+    } else {
       successCheck(falseValue, diffAnswer, diff);
       break;
     }
@@ -44,7 +44,7 @@ export default function isResultEquals() {
 
     if (multiplyAnswer === multiply) {
       successCheck(trueValue, multiplyAnswer);
-    } else if (multiplyAnswer !== multiply) {
+    } else {
       successCheck(falseValue, multiplyAnswer, multiply);
       break;
     }

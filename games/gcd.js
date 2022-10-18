@@ -1,10 +1,13 @@
 import readlineSync from 'readline-sync';
-import {
-  getRandomValue,
-  calculateGcd,
-  result,
-  successCheck,
-} from '../src/index.js';
+import { getRandomValue, result, successCheck } from '../src/index.js';
+
+function calculateGcd(firstNumber, secondNumber) {
+  if (secondNumber === 0) {
+    return firstNumber;
+  }
+
+  return calculateGcd(secondNumber, firstNumber % secondNumber);
+}
 
 export default function gcd() {
   console.log('Welcome to the Brain Games!');
@@ -24,7 +27,7 @@ export default function gcd() {
 
     if (answer === resultGcd) {
       successCheck(trueValue, answer);
-    } else if (answer !== resultGcd) {
+    } else {
       successCheck(falseValue, answer, resultGcd);
       break;
     }
