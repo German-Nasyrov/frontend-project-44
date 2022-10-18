@@ -1,5 +1,13 @@
 import readlineSync from 'readline-sync';
-import sayHello, { getRandomValue, result, successCheck } from '../src/index.js';
+import sayHello, {
+  trueValue,
+  falseValue,
+  getRandomValue,
+  result,
+  successCheck,
+} from '../src/index.js';
+
+const explain = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrimeNum = (number) => {
   if (number < 2) return false;
@@ -18,12 +26,9 @@ const isPrimeNum = (number) => {
 };
 
 export default function prime() {
-  const explain = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const userName = sayHello(explain);
 
   for (let i = 0; i < 3; i += 1) {
-    const trueValue = true;
-    const falseValue = false;
     const randomNum = getRandomValue();
     const question = isPrimeNum(randomNum);
     const yes = 'yes';

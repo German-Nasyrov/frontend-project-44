@@ -1,13 +1,18 @@
 import readlineSync from 'readline-sync';
-import sayHello, { getRandomValue, result, successCheck } from '../src/index.js';
+import sayHello, {
+  trueValue,
+  falseValue,
+  getRandomValue,
+  result,
+  successCheck,
+} from '../src/index.js';
+
+const explain = 'What is the result of the expression?';
 
 export default function isResultEquals() {
-  const explain = 'What is the result of the expression?';
   const userName = sayHello(explain);
 
   for (let i = 0; i < 1; i += 1) {
-    const trueValue = true;
-    const falseValue = false;
     const firstNumber = getRandomValue();
     const secondNumber = getRandomValue();
     const thirdNumber = getRandomValue();

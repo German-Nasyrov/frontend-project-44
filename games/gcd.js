@@ -1,5 +1,13 @@
 import readlineSync from 'readline-sync';
-import sayHello, { getRandomValue, result, successCheck } from '../src/index.js';
+import sayHello, {
+  trueValue,
+  falseValue,
+  getRandomValue,
+  result,
+  successCheck,
+} from '../src/index.js';
+
+const explain = 'Find the greatest common divisor of given numbers.';
 
 function calculateGcd(firstNumber, secondNumber) {
   if (secondNumber === 0) {
@@ -10,12 +18,9 @@ function calculateGcd(firstNumber, secondNumber) {
 }
 
 export default function gcd() {
-  const explain = 'Find the greatest common divisor of given numbers.';
   const userName = sayHello(explain);
 
   for (let i = 0; i < 3; i += 1) {
-    const trueValue = true;
-    const falseValue = false;
     let answer = '';
     const firstNumber = getRandomValue();
     const secondNumber = getRandomValue();

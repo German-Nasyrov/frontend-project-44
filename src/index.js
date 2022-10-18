@@ -1,6 +1,10 @@
 import readlineSync from 'readline-sync';
 
 let successCounter = 0;
+export const trueValue = true;
+export const falseValue = false;
+export const yes = 'yes';
+export const no = 'no';
 
 export default function sayHello(description) {
   console.log('Welcome to the Brain Games!');

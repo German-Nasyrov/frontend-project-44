@@ -1,15 +1,20 @@
 import readlineSync from 'readline-sync';
-import sayHello, { getRandomValue, result, successCheck } from '../src/index.js';
+import sayHello, {
+  trueValue,
+  falseValue,
+  yes,
+  no,
+  getRandomValue,
+  result,
+  successCheck,
+} from '../src/index.js';
+
+const explain = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export default function isNumberEven() {
-  const explain = 'Answer "yes" if the number is even, otherwise answer "no".';
   const userName = sayHello(explain);
 
   for (let i = 0; i < 3; i += 1) {
-    const trueValue = true;
-    const falseValue = false;
-    const yes = 'yes';
-    const no = 'no';
     const genNum = getRandomValue();
 
     console.log(`Question: ${genNum}`);

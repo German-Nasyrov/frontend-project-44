@@ -1,5 +1,11 @@
 import readlineSync from 'readline-sync';
-import sayHello, { getRandomValue, result, successCheck } from '../src/index.js';
+import sayHello, {
+  trueValue,
+  falseValue,
+  getRandomValue,
+  result,
+  successCheck,
+} from '../src/index.js';
 
 let array = [];
 let rightAnswer = '';
@@ -29,8 +35,6 @@ export default function calcNum() {
   const userName = sayHello(explain);
 
   for (let i = 0; i < 3; i += 1) {
-    const trueValue = true;
-    const falseValue = false;
     let answer = '';
     const doProgression = progression();
     console.log(`Question: ${doProgression}`);
