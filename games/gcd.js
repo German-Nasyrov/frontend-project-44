@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomValue, result, successCheck } from '../src/index.js';
+import sayHello, { getRandomValue, result, successCheck } from '../src/index.js';
 
 function calculateGcd(firstNumber, secondNumber) {
   if (secondNumber === 0) {
@@ -10,10 +10,8 @@ function calculateGcd(firstNumber, secondNumber) {
 }
 
 export default function gcd() {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('Find the greatest common divisor of given numbers.');
+  const explain = 'Find the greatest common divisor of given numbers.';
+  const userName = sayHello(explain);
 
   for (let i = 0; i < 3; i += 1) {
     const trueValue = true;

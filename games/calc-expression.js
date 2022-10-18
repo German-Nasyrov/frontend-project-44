@@ -1,11 +1,9 @@
 import readlineSync from 'readline-sync';
-import { getRandomValue, result, successCheck } from '../src/index.js';
+import sayHello, { getRandomValue, result, successCheck } from '../src/index.js';
 
 export default function isResultEquals() {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
-  console.log('What is the result of the expression?');
+  const explain = 'What is the result of the expression?';
+  const userName = sayHello(explain);
 
   for (let i = 0; i < 1; i += 1) {
     const trueValue = true;
