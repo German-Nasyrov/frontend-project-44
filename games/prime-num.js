@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 import sayHello, {
+  yes,
+  no,
   trueValue,
   falseValue,
   getRandomValue,
@@ -31,8 +33,6 @@ export default function prime() {
   for (let i = 0; i < 3; i += 1) {
     const randomNum = getRandomValue();
     const question = isPrimeNum(randomNum);
-    const yes = 'yes';
-    const no = 'no';
     let answer = '';
     console.log(`Question: ${randomNum}`);
     answer = readlineSync.question('Your answer: ');

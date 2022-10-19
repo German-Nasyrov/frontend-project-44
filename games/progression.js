@@ -9,6 +9,7 @@ import sayHello, {
 
 let array = [];
 let rightAnswer = '';
+const explain = 'What number is missing in the progression?';
 
 function getRandomIntInclusive(minNum, maxNum) {
   const min = Math.ceil(minNum);
@@ -31,7 +32,6 @@ function progression() {
 }
 
 export default function calcNum() {
-  const explain = 'What number is missing in the progression?';
   const userName = sayHello(explain);
 
   for (let i = 0; i < 3; i += 1) {

@@ -1,8 +1,16 @@
 import readlineSync from 'readline-sync';
 import sayHello, {
+  firstNumber,
+  secondNumber,
+  thirdNumber,
+  fourthNumber,
+  fifthNumber,
+  sixthNumber,
   trueValue,
   falseValue,
-  getRandomValue,
+  sum,
+  diff,
+  multiply,
   result,
   successCheck,
 } from '../src/index.js';
@@ -13,15 +21,6 @@ export default function isResultEquals() {
   const userName = sayHello(explain);
 
   for (let i = 0; i < 1; i += 1) {
-    const firstNumber = getRandomValue();
-    const secondNumber = getRandomValue();
-    const thirdNumber = getRandomValue();
-    const fourthNumber = getRandomValue();
-    const fifthNumber = getRandomValue();
-    const sixthNumber = getRandomValue();
-    const sum = String(firstNumber + secondNumber);
-    const diff = String(thirdNumber - fourthNumber);
-    const multiply = String(fifthNumber * sixthNumber);
     console.log(`Question: ${firstNumber} + ${secondNumber}`);
     const sumAnswer = readlineSync.question('Your answer: ');
 
