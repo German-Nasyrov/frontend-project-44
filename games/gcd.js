@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 import sayHello, {
+  firstRound,
+  thirdRound,
   trueValue,
   falseValue,
   getRandomValue,
@@ -8,26 +10,27 @@ import sayHello, {
 } from '../src/index.js';
 
 const explain = 'Find the greatest common divisor of given numbers.';
+const userName = sayHello(explain);
 
-function calculateGcd(firstNumber, secondNumber) {
+const calculateGcd = (firstNumber, secondNumber) => {
   if (secondNumber === 0) return firstNumber;
   return calculateGcd(secondNumber, firstNumber % secondNumber);
-}
+};
 
-export default function gcd() {
-  const userName = sayHello(explain);
-  for (let i = 0; i < 3; i += 1) {
-    const firstNumber = getRandomValue();
-    const secondNumber = getRandomValue();
-    const resultGcd = String(calculateGcd(firstNumber, secondNumber));
-    console.log(`Question: ${firstNumber} ${secondNumber}`);
+const gcd = () => {
+  for (let i = firstRound; i <= thirdRound; i += 1) {
+    const valueOne = getRandomValue();
+    const valueTwo = getRandomValue();
+    const resultGcd = String(calculateGcd(valueOne, valueTwo));
+    console.log(`Question: ${valueOne} ${valueTwo}`);
     const answer = readlineSync.question('Your answer: ');
-    if (answer === resultGcd) {
-      successCheck(trueValue, answer);
-    } else {
+    if (answer === resultGcd) successCheck(trueValue, answer);
+    else {
       successCheck(falseValue, answer, resultGcd);
       break;
     }
   }
   return result(userName);
-}
+};
+
+export default gcd;

@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 import sayHello, {
+  firstRound,
+  thirdRound,
   yes,
   no,
   trueValue,
@@ -10,6 +12,7 @@ import sayHello, {
 } from '../src/index.js';
 
 const explain = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const userName = sayHello(explain);
 
 const isPrimeNum = (number) => {
   if (number < 2) return false;
@@ -21,17 +24,21 @@ const isPrimeNum = (number) => {
   return true;
 };
 
-export default function prime() {
-  const userName = sayHello(explain);
-  for (let i = 0; i < 3; i += 1) {
-    const randomNum = getRandomValue();
-    const question = isPrimeNum(randomNum);
-    let answer = '';
-    console.log(`Question: ${randomNum}`);
-    answer = readlineSync.question('Your answer: ');
-    if ((question && answer === yes) || (!question && answer === no)) {
+const prime = () => {
+  for (let i = firstRound; i <= thirdRound; i += 1) {
+    console.log(`Question: ${getRandomValue()}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (
+      // eslint-disable-next-line operator-linebreak
+      (isPrimeNum(getRandomValue()) && answer === yes) ||
+      (!isPrimeNum(getRandomValue()) && answer === no)
+    ) {
       successCheck(trueValue, answer);
-    } else if ((!question && answer === yes) || (question && answer !== no)) {
+    } else if (
+      // eslint-disable-next-line operator-linebreak
+      (!isPrimeNum(getRandomValue()) && answer === yes) ||
+      (isPrimeNum(getRandomValue()) && answer !== no)
+    ) {
       successCheck(falseValue, answer, no);
       break;
     } else {
@@ -40,4 +47,6 @@ export default function prime() {
     }
   }
   return result(userName);
-}
+};
+
+export default prime;

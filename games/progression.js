@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 import sayHello, {
+  firstRound,
+  thirdRound,
   trueValue,
   falseValue,
   getRandomValue,
@@ -10,14 +12,15 @@ import sayHello, {
 let array = [];
 let rightAnswer = '';
 const explain = 'What number is missing in the progression?';
+const userName = sayHello(explain);
 
-function getRandomIntInclusive(minNum, maxNum) {
+const getRandomIntInclusive = (minNum, maxNum) => {
   const min = Math.ceil(minNum);
   const max = Math.floor(maxNum);
   return Math.floor(Math.random() * (max - min)) + min;
-}
+};
 
-function progression() {
+const progression = () => {
   const randomNum = getRandomValue();
   const elemCount = getRandomIntInclusive(4, 10);
   const randomStep = getRandomIntInclusive(1, 11);
@@ -26,13 +29,11 @@ function progression() {
   rightAnswer = String(array[chooseElem]);
   array[chooseElem] = '..';
   return array.join(' ');
-}
+};
 
-export default function calcNum() {
-  const userName = sayHello(explain);
-  for (let i = 0; i < 3; i += 1) {
-    const doProgression = progression();
-    console.log(`Question: ${doProgression}`);
+const calcNum = () => {
+  for (let i = firstRound; i <= thirdRound; i += 1) {
+    console.log(`Question: ${progression()}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer === rightAnswer) {
       successCheck(trueValue, answer);
@@ -43,4 +44,6 @@ export default function calcNum() {
     }
   }
   return result(userName);
-}
+};
+
+export default calcNum;

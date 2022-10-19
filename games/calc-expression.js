@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
 import sayHello, {
+  firstRound,
   firstNumber,
   secondNumber,
   thirdNumber,
@@ -16,14 +17,16 @@ import sayHello, {
 } from '../src/index.js';
 
 const explain = 'What is the result of the expression?';
+const userName = sayHello(explain);
+let i = firstRound;
 
-export default function isResultEquals() {
-  const userName = sayHello(explain);
-  for (let i = 0; i < 1; i += 1) {
+const isResultEquals = () => {
+  while (i <= firstRound) {
     console.log(`Question: ${firstNumber} + ${secondNumber}`);
     const sumAnswer = readlineSync.question('Your answer: ');
     if (sumAnswer === sum) {
       successCheck(trueValue, sumAnswer);
+      i += 1;
     } else {
       successCheck(falseValue, sumAnswer, sum);
       break;
@@ -32,6 +35,7 @@ export default function isResultEquals() {
     const diffAnswer = readlineSync.question('Your answer: ');
     if (diffAnswer === diff) {
       successCheck(trueValue, diffAnswer);
+      i += 1;
     } else {
       successCheck(falseValue, diffAnswer, diff);
       break;
@@ -40,10 +44,13 @@ export default function isResultEquals() {
     const multiplyAnswer = readlineSync.question('Your answer: ');
     if (multiplyAnswer === multiply) {
       successCheck(trueValue, multiplyAnswer);
+      i += 1;
     } else {
       successCheck(falseValue, multiplyAnswer, multiply);
       break;
     }
   }
   return result(userName);
-}
+};
+
+export default isResultEquals;

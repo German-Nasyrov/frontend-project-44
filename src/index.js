@@ -1,16 +1,14 @@
 import readlineSync from 'readline-sync';
 
-export default function sayHello(description) {
+const sayHello = (description) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
   return userName;
-}
+};
 
-export function getRandomValue() {
-  return Math.floor(Math.random() * 101);
-}
+export const getRandomValue = () => Math.floor(Math.random() * 101);
 
 let successCounter = 0;
 export const trueValue = true;
@@ -26,8 +24,10 @@ export const sixthNumber = getRandomValue();
 export const sum = String(firstNumber + secondNumber);
 export const diff = String(thirdNumber - fourthNumber);
 export const multiply = String(fifthNumber * sixthNumber);
+export const firstRound = 1;
+export const thirdRound = 3;
 
-export function successCheck(value, answer, rightAnswer) {
+export const successCheck = (value, answer, rightAnswer) => {
   if (value === true) {
     successCounter += 1;
     console.log('Correct!');
@@ -36,10 +36,12 @@ export function successCheck(value, answer, rightAnswer) {
       `'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`,
     );
   }
-}
+};
 
 export function result(userName) {
   return successCounter === 3
     ? console.log(`Congratulations, ${userName}!`)
     : console.log(`Let's try again, ${userName}!`);
 }
+
+export default sayHello;
