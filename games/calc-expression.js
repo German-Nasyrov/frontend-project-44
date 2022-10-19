@@ -17,8 +17,8 @@ import sayHello, {
 } from '../src/index.js';
 
 const explain = 'What is the result of the expression?';
-const userName = sayHello(explain);
 let i = firstRound;
+const userName = sayHello(explain);
 
 const isResultEquals = () => {
   while (i <= firstRound) {

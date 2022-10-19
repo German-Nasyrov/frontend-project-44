@@ -33,7 +33,8 @@ const progression = () => {
 
 const calcNum = () => {
   for (let i = firstRound; i <= thirdRound; i += 1) {
-    console.log(`Question: ${progression()}`);
+    const doProgression = progression();
+    console.log(`Question: ${doProgression}`);
     const answer = readlineSync.question('Your answer: ');
     if (answer === rightAnswer) {
       successCheck(trueValue, answer);

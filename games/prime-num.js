@@ -26,19 +26,14 @@ const isPrimeNum = (number) => {
 
 const prime = () => {
   for (let i = firstRound; i <= thirdRound; i += 1) {
-    console.log(`Question: ${getRandomValue()}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (
-      // eslint-disable-next-line operator-linebreak
-      (isPrimeNum(getRandomValue()) && answer === yes) ||
-      (!isPrimeNum(getRandomValue()) && answer === no)
-    ) {
+    const randomNum = getRandomValue();
+    const question = isPrimeNum(randomNum);
+    let answer = '';
+    console.log(`Question: ${randomNum}`);
+    answer = readlineSync.question('Your answer: ');
+    if ((question && answer === yes) || (!question && answer === no)) {
       successCheck(trueValue, answer);
-    } else if (
-      // eslint-disable-next-line operator-linebreak
-      (!isPrimeNum(getRandomValue()) && answer === yes) ||
-      (isPrimeNum(getRandomValue()) && answer !== no)
-    ) {
+    } else if ((!question && answer === yes) || (question && answer !== no)) {
       successCheck(falseValue, answer, no);
       break;
     } else {
