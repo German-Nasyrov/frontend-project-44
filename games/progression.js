@@ -22,24 +22,18 @@ function progression() {
   const elemCount = getRandomIntInclusive(4, 10);
   const randomStep = getRandomIntInclusive(1, 11);
   const chooseElem = getRandomIntInclusive(0, elemCount);
-  for (let i = 0; i <= elemCount; i += 1) {
-    array.push(i * randomStep + randomNum);
-  }
+  for (let i = 0; i <= elemCount; i += 1) array.push(i * randomStep + randomNum);
   rightAnswer = String(array[chooseElem]);
   array[chooseElem] = '..';
-
   return array.join(' ');
 }
 
 export default function calcNum() {
   const userName = sayHello(explain);
-
   for (let i = 0; i < 3; i += 1) {
-    let answer = '';
     const doProgression = progression();
     console.log(`Question: ${doProgression}`);
-    answer = readlineSync.question('Your answer: ');
-
+    const answer = readlineSync.question('Your answer: ');
     if (answer === rightAnswer) {
       successCheck(trueValue, answer);
       array = [];
@@ -48,6 +42,5 @@ export default function calcNum() {
       break;
     }
   }
-
   return result(userName);
 }

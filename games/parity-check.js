@@ -13,13 +13,10 @@ const explain = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export default function isNumberEven() {
   const userName = sayHello(explain);
-
   for (let i = 0; i < 3; i += 1) {
     const genNum = getRandomValue();
-
     console.log(`Question: ${genNum}`);
     const answer = readlineSync.question('Your answer: ');
-
     if (
       // eslint-disable-next-line operator-linebreak
       (genNum % 2 === 0 && answer === yes) ||
@@ -42,6 +39,5 @@ export default function isNumberEven() {
       break;
     }
   }
-
   return result(userName);
 }
