@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import isResultEquals from '../games/calc-expression.js';
+import isResultEquals from '../src/games/calc-expression.js';
 
 isResultEquals();

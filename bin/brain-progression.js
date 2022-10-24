@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import calcNum from '../games/progression.js';
+import calcNum from '../src/games/progression.js';
 
 calcNum();
