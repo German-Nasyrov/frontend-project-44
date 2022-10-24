@@ -16,9 +16,9 @@ const isPrimeNum = (number) => {
 };
 
 const getCircle = () => {
-  const genNum = getRandom(minNum, maxNum);
-  const question = genNum;
-  const output = isPrimeNum(genNum) ? 'yes' : 'no';
+  const genRandomNum = getRandom(minNum, maxNum);
+  const output = isPrimeNum(genRandomNum) ? 'yes' : 'no';
+  const question = genRandomNum;
   return [question, output];
 };
 
