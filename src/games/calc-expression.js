@@ -1,8 +1,6 @@
-import getRandom from '../helper.js';
+import getRandomNum from '../helper.js';
 import runLoop from '../index.js';
 
-const minNum = 0;
-const maxNum = 100;
 const chars = ['+', '-', '*'];
 const description = 'What is the result of the expression?';
 
@@ -19,17 +17,17 @@ const calc = (firstNumber, secondNumber, char) => {
   }
 };
 
-const getCircle = () => {
-  const genFirstNum = getRandom(minNum, maxNum);
-  const genSecondNum = getRandom(minNum, maxNum);
-  const char = chars[getRandom(0, chars.length - 1)];
+const getRound = () => {
+  const genFirstNum = getRandomNum(0, 100);
+  const genSecondNum = getRandomNum(0, 100);
+  const char = chars[getRandomNum(0, chars.length - 1)];
   const question = `${genFirstNum} ${char} ${genSecondNum}`;
-  const output = String(calc(genFirstNum, genSecondNum, char));
-  return [question, output];
+  const answer = String(calc(genFirstNum, genSecondNum, char));
+  return [question, answer];
 };
 
-const isResultEquals = () => {
-  runLoop(getCircle, description);
+const playBrainCalc = () => {
+  runLoop(getRound, description);
 };
 
-export default isResultEquals;
+export default playBrainCalc;

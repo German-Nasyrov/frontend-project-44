@@ -1,8 +1,6 @@
-import getRandom from '../helper.js';
+import getRandomNum from '../helper.js';
 import runLoop from '../index.js';
 
-const minNum = 0;
-const maxNum = 100;
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrimeNum = (number) => {
@@ -15,15 +13,15 @@ const isPrimeNum = (number) => {
   return true;
 };
 
-const getCircle = () => {
-  const genRandomNum = getRandom(minNum, maxNum);
-  const output = isPrimeNum(genRandomNum) ? 'yes' : 'no';
+const getRound = () => {
+  const genRandomNum = getRandomNum(0, 100);
+  const answer = isPrimeNum(genRandomNum) ? 'yes' : 'no';
   const question = genRandomNum;
-  return [question, output];
+  return [question, answer];
 };
 
-const prime = () => {
-  runLoop(getCircle, description);
+const playBrainPrime = () => {
+  runLoop(getRound, description);
 };
 
-export default prime;
+export default playBrainPrime;

@@ -1,8 +1,6 @@
-import getRandom from '../helper.js';
+import getRandomNum from '../helper.js';
 import runLoop from '../index.js';
 
-const minNum = 0;
-const maxNum = 100;
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => {
@@ -10,15 +8,15 @@ const isEven = (num) => {
   return false;
 };
 
-const getCircle = () => {
-  const genNum = getRandom(minNum, maxNum);
+const getRound = () => {
+  const genNum = getRandomNum(0, 100);
   const question = genNum;
-  const output = isEven(genNum) ? 'yes' : 'no';
-  return [question, output];
+  const answer = isEven(genNum) ? 'yes' : 'no';
+  return [question, answer];
 };
 
-const even = () => {
-  runLoop(getCircle, description);
+const playBrainEven = () => {
+  runLoop(getRound, description);
 };
 
-export default even;
+export default playBrainEven;

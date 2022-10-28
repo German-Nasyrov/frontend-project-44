@@ -1,37 +1,35 @@
-import getRandom from '../helper.js';
+import getRandomNum from '../helper.js';
 import runLoop from '../index.js';
 
-const minNum = 0;
-const maxNum = 100;
-let array = [];
-let rightAnswer = '';
 const description = 'What number is missing in the progression?';
 
-const getRandomIntInclusive = (minValue, maxValue) => {
-  const min = Math.ceil(minValue);
-  const max = Math.floor(maxValue);
-  return Math.floor(Math.random() * (max - min)) + min;
+const getProgression = (start, step, length) => {
+  const progression = [];
+  for (let i = 0; i < length; i += 1) {
+    progression.push(start + step * i);
+  }
+  return progression;
 };
 
-const progression = () => {
-  const randomNum = getRandom(minNum, maxNum);
-  const elemCount = getRandomIntInclusive(4, 10);
-  const randomStep = getRandomIntInclusive(1, 11);
-  const chooseElem = getRandomIntInclusive(0, elemCount);
-  for (let i = 0; i <= elemCount; i += 1) array.push(i * randomStep + randomNum);
-  rightAnswer = String(array[chooseElem]);
-  array[chooseElem] = '..';
-  return array.join(' ');
+const getRound = () => {
+  const beginOfProgression = getRandomNum(0, 100);
+  const stepOfProgression = getRandomNum(1, 10);
+  const progressionLength = getRandomNum(5, 10);
+  const progression = getProgression(
+    beginOfProgression,
+    stepOfProgression,
+    progressionLength,
+  );
+  const indexOfHiddenElement = getRandomNum(0, progression.length - 1);
+  const hiddenElement = progression.splice(indexOfHiddenElement, 1, '..');
+  const question = progression.join(' ');
+  const answer = String(hiddenElement);
+
+  return [question, answer];
 };
 
-const getCircle = () => {
-  const question = progression();
-  array = [];
-  return [question, rightAnswer];
+const playBrainProgression = () => {
+  runLoop(getRound, description);
 };
 
-const calcNum = () => {
-  runLoop(getCircle, description);
-};
-
-export default calcNum;
+export default playBrainProgression;
